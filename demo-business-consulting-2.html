@@ -64,6 +64,26 @@
       href="css/skins/skin-business-consulting-2.css"
     />
     <link rel="stylesheet" href="css/custom.css" />
+
+    <style>
+    /* Estilos unificados para ambos menús */
+    #mainNav .nav-link,
+    #mainNavFooter .nav-link {
+        transition: color 0.3s ease;
+    }
+
+    #mainNav .nav-link:hover,
+    #mainNavFooter .nav-link:hover,
+    #mainNav .nav-link.active,
+    #mainNavFooter .nav-link.active {
+        color: var(--secondary) !important;
+        border-bottom:9px solid var(--primary);
+        padding-bottom: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    </style>
   </head>
 
   <body>
@@ -81,59 +101,7 @@
               <div class="header-row h-100">
                 <div class="header-column justify-content-between">
                   <div class="header-row">
-                    <nav class="header-nav-top w-100">
-                      <ul
-                        class="nav nav-pills justify-content-between w-100 h-100"
-                      >
-                        <li class="nav-item py-2 d-inline-flex">
-                          <span
-                            class="header-top-email px-0 font-weight-normal align-items-center d-none d-xl-flex me-4"
-                          >
-                            <span>
-                              <img
-                                width="25"
-                                height="18"
-                                src="img/demos/business-consulting-2/icons/mail.svg"
-                                alt="Mail"
-                              />
-                            </span>
-                            <a
-                              class="text-color-secondary text-color-hover-primary text-decoration-none"
-                              href="mailto:colabora@filmznetwork.com"
-                              >colabora@filmznetwork.com</a
-                            >
-                          </span>
-                          <span
-                            class="header-top-opening-hours px-0 font-weight-normal align-items-center text-color-secondary d-none d-xl-flex"
-                          >
-                            <span
-                              ><i
-                                class="fab fa-youtube highlight-primary-invert me-1"
-                              ></i
-                            ></span>
-                            <a
-                              href="https://youtube.com/filmznetwork"
-                              target="_blank"
-                              class="text-color-secondary text-color-hover-primary text-decoration-none"
-                              >Filmz Network en YouTube</a
-                            >
-                          </span>
-                        </li>
-                        <li
-                          class="nav-item nav-item-header-top-socials d-none d-md-flex justify-content-between h-100"
-                        >
-                          <span
-                            class="header-top-button-make-as-appoitment d-inline-flex align-items-center justify-content-center h-100 p-0 align-top"
-                          >
-                            <a
-                              href="#universos"
-                              class="btn-primary d-flex align-items-center justify-content-center h-100 w-100 text-color-light font-weight-semibold text-decoration-none text-uppercase custom-button-header-top"
-                              >Explora Contenido</a
-                            >
-                          </span>
-                        </li>
-                      </ul>
-                    </nav>
+                
                   </div>
                 </div>
               </div>
@@ -164,32 +132,48 @@
                       class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1"
                     >
                       <nav class="collapse">
-                        <ul class="nav nav-pills" id="mainNav">
+                        <ul class="nav nav-pills justify-content-center justify-content-lg-end" id="mainNav">
                           <li class="dropdown-secondary">
-                            <a class="nav-link active" href="index.html"
+                            <a class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary" 
+                               href="#inicio"
+                               onclick="setActiveMainNav(this)"
                               >Inicio</a
                             >
                           </li>
                           <li class="dropdown-secondary">
-                            <a class="nav-link" href="#universos">Universos</a>
+                            <a class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary" 
+                               href="#universos"
+                               onclick="setActiveMainNav(this)"
+                              >Universos</a
+                            >
                           </li>
                           <li class="dropdown-secondary">
-                            <a class="nav-link" href="#comunidades"
+                            <a class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary" 
+                               href="#comunidades"
+                               onclick="setActiveMainNav(this)"
                               >Comunidades</a
                             >
                           </li>
                           <li class="dropdown-secondary">
-                            <a class="nav-link" href="#proceso"
+                            <a class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary" 
+                               href="#proceso"
+                               onclick="setActiveMainNav(this)"
                               >Detrás de Cámaras</a
                             >
                           </li>
                           <li class="dropdown-secondary">
-                            <a class="nav-link" href="#manifiesto"
+                            <a class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary" 
+                               href="#manifiesto"
+                               onclick="setActiveMainNav(this)"
                               >Manifiesto</a
                             >
                           </li>
                           <li class="dropdown-secondary">
-                            <a class="nav-link" href="#unete">Únete</a>
+                            <a class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary" 
+                               href="#unete"
+                               onclick="setActiveMainNav(this)"
+                              >Únete</a
+                            >
                           </li>
                         </ul>
                       </nav>
@@ -204,58 +188,14 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="header-column header-column-search justify-content-center align-items-end"
-              >
-                <div class="header-nav-features">
-                  <div
-                    class="header-nav-feature header-nav-features-search d-inline-flex"
-                  >
-                    <a
-                      href="#"
-                      class="header-nav-features-toggle"
-                      data-focus="headerSearch"
-                    >
-                      <i
-                        class="fas fa-search header-nav-top-icon text-color-secondary text-3"
-                      ></i>
-                    </a>
-                    <div
-                      class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0"
-                      id="headerTopSearchDropdown"
-                    >
-                      <form
-                        role="search"
-                        action="page-search-results.html"
-                        method="get"
-                      >
-                        <div class="simple-search input-group">
-                          <input
-                            class="form-control text-1"
-                            id="headerSearch"
-                            name="q"
-                            type="search"
-                            value=""
-                            placeholder="Buscar en Filmz Network..."
-                          />
-                          <button class="btn" type="submit" aria-label="Search">
-                            <i
-                              class="fa fa-search header-nav-top-icon text-color-secondary"
-                            ></i>
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
+           
             </div>
           </div>
         </div>
       </header>
 
       <div role="main" class="main">
-        <div
+        <div id="inicio"
           class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover show-dots-xs show-dots-sm show-dots-md nav-style-1 nav-inside nav-inside-plus nav-dark nav-lg nav-font-size-lg show-nav-hover bg-color-quaternary custom-slider-container mb-0"
           data-plugin-options="{'autoplay': true, 'autoplayTimeout': 7500, 'items': 1, 'loop': true, 'video': true, 'lazyLoad': true}"
           data-dynamic-height="['700px','700px','700px','550px','550px']"
@@ -569,11 +509,7 @@
                   data-appear-animation="fadeInUpShorter"
                   data-appear-animation-delay="100"
                 >
-                  <div class="title-with-lines">
-                    <span class="line-pre-title bg-color-secondary"></span>
-                    <span>Nuestros Proyectos</span>
-                    <span class="line-end-title bg-color-secondary"></span>
-                  </div>
+             
                 </p>
                 <h2
                   class="text-color-secondary font-weight-bold text-capitalize mb-3 custom-letter-spacing-2 custom-text-1 appear-animation"
@@ -601,13 +537,13 @@
                     data-appear-animation-delay="400"
                   >
                     <a
-                      href="enlace-a-pagina-o-video-universo1.html"
+                      href="https://www.youtube.com/watch?v=JSOTk6C8pXY&t=1s"
                       class="text-decoration-none"
                     >
                       <div class="card-img-top position-relative">
                         <img
                           class="img-fluid border-radius-0"
-                          src="img/demos/business-consulting-2/filmz/universos/cronicas-urbanas.jpg"
+                          src="https://img.youtube.com/vi/FZbC1Ps-fb4/hqdefault.jpg"
                           alt="Crónicas Urbanas"
                         />
                         <div
@@ -622,19 +558,17 @@
                         <h4 class="card-title mb-2 text-5 font-weight-bold">
                           <a
                             class="text-color-secondary text-color-hover-primary"
-                            href="enlace-a-pagina-o-video-universo1.html"
-                            >"Crónicas Urbanas"</a
+                            href="https://www.youtube.com/watch?v=JSOTk6C8pXY&t=1s"
+                            >"Abandona a su familia por dinero y cuando quiere regresar, es muy tarde"</a
                           >
                         </h4>
                         <p class="card-text mb-2">
-                          Serie documental que explora las vidas anónimas y
-                          extraordinarias que palpitan en el corazón de la
-                          ciudad.
+                          Un padre abandona a su esposa enferma y a sus hijas por otra mujer interesada en su dinero. Las hijas sufren, su madre fallece, y ellas deben luchar solas. Cuando se vuelven famosas, el padre intenta volver, pero el destino ya le tiene una lección
                         </p>
                         <a
-                          href="enlace-a-pagina-o-video-universo1.html"
-                          class="font-weight-bold text-uppercase text-decoration-none d-block mt-3"
-                          >Explorar Universo +</a
+                          href="https://www.youtube.com/watch?v=JSOTk6C8pXY&t=1s"
+                          class="btn btn-primary btn-modern font-weight-bold text-2 btn-py-3 px-5 mt-2 "
+                          >Ver video +</a
                         >
                       </div>
                     </div>
@@ -649,13 +583,13 @@
                     data-appear-animation-delay="550"
                   >
                     <a
-                      href="enlace-a-pagina-o-video-universo2.html"
+                      href="https://www.youtube.com/watch?v=oHMGBQhOD4E"
                       class="text-decoration-none"
                     >
                       <div class="card-img-top position-relative">
                         <img
                           class="img-fluid border-radius-0"
-                          src="img/demos/business-consulting-2/filmz/universos/neon-despertar.jpg"
+                          src="https://img.youtube.com/vi/oHMGBQhOD4E/hqdefault.jpg"
                           alt="Neón Despertar"
                         />
                         <div
@@ -670,18 +604,18 @@
                         <h4 class="card-title mb-2 text-5 font-weight-bold">
                           <a
                             class="text-color-secondary text-color-hover-primary"
-                            href="enlace-a-pagina-o-video-universo2.html"
-                            >"Neón Despertar"</a
+                            href="https://www.youtube.com/watch?v=oHMGBQhOD4E"
+                            >"Mujer materialista abandona a su familia y años después es descubierta por quien menos espera"</a
                           >
                         </h4>
                         <p class="card-text mb-2">
-                          Cortometraje de ciencia ficción animado que te sumerge
-                          en una distopía vibrante y reflexiva.
+                          Un hombre está a punto de casarse con una mujer que trata mal a un limpiaparabrisas. Sin saberlo, este humilde hombre conoce el pasado oscuro de ella: abandonó a su hija por dinero. La verdad sale a la luz en el momento menos esperado
+                        </p>
                         </p>
                         <a
-                          href="enlace-a-pagina-o-video-universo2.html"
-                          class="font-weight-bold text-uppercase text-decoration-none d-block mt-3"
-                          >Ver Corto +</a
+                          href="https://www.youtube.com/watch?v=oHMGBQhOD4E"
+                          class="btn btn-primary btn-modern font-weight-bold text-2 btn-py-3 px-5 mt-2 "
+                          >Ver video +</a
                         >
                       </div>
                     </div>
@@ -696,13 +630,13 @@
                     data-appear-animation-delay="700"
                   >
                     <a
-                      href="enlace-a-pagina-o-video-universo3.html"
+                      href="https://www.youtube.com/watch?v=JSOTk6C8pXY&t=1s"
                       class="text-decoration-none"
                     >
                       <div class="card-img-top position-relative">
                         <img
                           class="img-fluid border-radius-0"
-                          src="img/demos/business-consulting-2/filmz/universos/lienzo-sonoro.jpg"
+                          src="https://img.youtube.com/vi/JSOTk6C8pXY/hqdefault.jpg"
                           alt="El Lienzo Sonoro"
                         />
                         <div
@@ -717,18 +651,17 @@
                         <h4 class="card-title mb-2 text-5 font-weight-bold">
                           <a
                             class="text-color-secondary text-color-hover-primary"
-                            href="enlace-a-pagina-o-video-universo3.html"
-                            >"El Lienzo Sonoro"</a
+                            href="https://www.youtube.com/watch?v=JSOTk6C8pXY&t=1s"
+                            >"Jefa se hace pasar por empleada para ver la verdadera cara de las aspirantes"</a
                           >
                         </h4>
                         <p class="card-text mb-2">
-                          Videoensayos que fusionan música y artes visuales,
-                          explorando la sinestesia creativa.
+                          Una jefa finge ser empleada de limpieza para evaluar a las candidatas a un puesto. Descubre quiénes son arrogantes y quién muestra respeto por todos, sin importar su posición. Su decisión final demuestra que la calidad humana vale más que los títulos.
                         </p>
                         <a
-                          href="enlace-a-pagina-o-video-universo3.html"
-                          class="font-weight-bold text-uppercase text-decoration-none d-block mt-3"
-                          >Descubrir Serie +</a
+                          href="https://www.youtube.com/watch?v=JSOTk6C8pXY&t=1s"
+                          class="btn btn-primary btn-modern font-weight-bold text-2 btn-py-3 px-5 mt-2 "
+                          >Ver video +</a
                         >
                       </div>
                     </div>
@@ -739,7 +672,7 @@
             <div class="row mt-3">
               <div class="col text-center">
                 <a
-                  href="https://youtube.com/filmznetwork"
+                  href="https://www.youtube.com/@escritosreflexivos"
                   target="_blank"
                   class="btn btn-primary btn-modern font-weight-bold text-2 btn-py-3 px-5 mt-2 appear-animation"
                   data-appear-animation="fadeInUpShorter"
@@ -767,18 +700,14 @@
           <div class="container">
             <div class="row justify-content-end align-items-center h-100 py-5">
               <div
-                class="col-lg-7 position-relative bg-color-light z-index-1 col-our-services-text p-5 shadow-lg"
+                class="col-lg-12 position-relative bg-color-light z-index-1 col-our-services-text p-5 shadow-lg"
               >
                 <p
                   class="text-uppercase font-weight-semibold mb-1 appear-animation"
                   data-appear-animation="fadeInRightShorter"
                   data-appear-animation-delay="100"
                 >
-                  <div class="title-with-lines">
-                    <span class="line-pre-title bg-color-secondary"></span>
-                    <span>Conexiones Reales</span>
-                    <span class="line-end-title bg-color-secondary"></span>
-                  </div>
+                
                 </p>
                 <h2
                   class="text-color-secondary font-weight-bold text-capitalize mb-4 appear-animation"
@@ -797,295 +726,57 @@
                   a nuestra audiencia. ¡Únete y sé parte de la familia Filmz
                   Network!
                 </p>
-                <div
-                  class="accordion accordion-modern-status accordion-modern-status-primary"
-                  id="accordionComunidades"
-                >
-                  <div
-                    class="card card-default appear-animation"
-                    data-appear-animation="fadeInRightShorter"
-                    data-appear-animation-delay="400"
-                  >
-                    <div class="card-header" id="headingIReflexiones">
-                      <h4 class="card-title m-0">
-                        <a
-                          class="accordion-toggle text-color-dark font-weight-bold"
-                          data-bs-toggle="collapse"
-                          href="#collapseIReflexiones"
-                          aria-expanded="true"
-                          aria-controls="collapseIReflexiones"
-                        >
-                          <img
-                            src="https://scontent-mad1-1.xx.fbcdn.net/v/t1.6435-9/178482437_326720942145940_6477783282697025392_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=wEQBzzjCk6gQ7kNvwESqprU&_nc_oc=Adlf7xFb_kjUy6vt7QLGI6WQz_hdHKHPh04bbhDc55HMNJ5FsGzGiXW_ptI9U-Or6LVHj5fFn79_xl36TPw8m35K&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=ELOlaCTAhZyDDmuW3WqBYg&oh=00_AfKXZO-97pLVLnkTyJVWI7SSbNIZZO30IhbzdthCmR3yTA&oe=68512987"
-                            alt="iReflexionesok"
-                            class="me-2"
-                            style="max-height: 24px"
-                          />
-                          iReflexionesok
-                        </a>
-                      </h4>
-                    </div>
-                    <div
-                      id="collapseIReflexiones"
-                      class="collapse show"
-                      aria-labelledby="headingIReflexiones"
-                      data-bs-parent="#accordionComunidades"
-                    >
-                      <div class="card-body">
-                        <p>
-                          Dosis diarias de inspiración para el alma. Un espacio
-                          para la introspección y el crecimiento personal.
-                        </p>
-                        <div class="row g-2 mb-2">
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/ireflexiones-post1.jpg"
-                              class="img-fluid rounded"
-                              alt="Post iReflexiones"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/ireflexiones-post2.jpg"
-                              class="img-fluid rounded"
-                              alt="Post iReflexiones"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/ireflexiones-post3.jpg"
-                              class="img-fluid rounded"
-                              alt="Post iReflexiones"
-                            />
-                          </div>
+                <!-- NUEVO DISEÑO DE TARJETAS DE FACEBOOK -->
+                <div class="container py-4">
+                  <div class="row justify-content-center">
+                    <!-- iReflexionesok -->
+                    <div class="col-md-4 mb-4">
+                      <div class="card text-center shadow border-0 h-100">
+                        <img src="https://scontent-mad1-1.xx.fbcdn.net/v/t1.6435-9/178482437_326720942145940_6477783282697025392_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=wEQBzzjCk6gQ7kNvwESqprU&_nc_oc=Adlf7xFb_kjUy6vt7QLGI6WQz_hdHKHPh04bbhDc55HMNJ5FsGzGiXW_ptI9U-Or6LVHj5fFn79_xl36TPw8m35K&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=ELOlaCTAhZyDDmuW3WqBYg&oh=00_AfKXZO-97pLVLnkTyJVWI7SSbNIZZO30IhbzdthCmR3yTA&oe=68512987" class="card-img-top rounded-circle mx-auto mt-4" style="width:120px; height:120px; object-fit:cover;" alt="iReflexionesok">
+                        <div class="card-body">
+                          <h5 class="card-title mb-1 font-weight-bold">iReflexionesok</h5>
+                          <p class="card-text text-muted mb-2">Inspiración y crecimiento personal</p>
+                          <a href="https://www.facebook.com/iReflexionesok" target="_blank" class="btn btn-primary btn-sm">
+                            Ver en Facebook <i class="fab fa-facebook-f ms-1"></i>
+                          </a>
                         </div>
-                        <a
-                          href="https://www.facebook.com/iReflexionesok"
-                          target="_blank"
-                          class="btn btn-outline btn-primary btn-sm"
-                          >Visitar en Facebook
-                          <i class="fab fa-facebook-f ms-1"></i
-                        ></a>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="card card-default appear-animation"
-                    data-appear-animation="fadeInRightShorter"
-                    data-appear-animation-delay="500"
-                  >
-                    <div class="card-header" id="headingValentina">
-                      <h4 class="card-title m-0">
-                        <a
-                          class="accordion-toggle text-color-dark font-weight-bold collapsed"
-                          data-bs-toggle="collapse"
-                          href="#collapseValentina"
-                          aria-expanded="false"
-                          aria-controls="collapseValentina"
-                        >
-                          <img
-                            src="img/demos/business-consulting-2/filmz/comunidades/valentina-logo-small.png"
-                            alt="ValentinaIsabeloficial"
-                            class="me-2"
-                            style="max-height: 24px"
-                          />
-                          ValentinaIsabeloficial
-                        </a>
-                      </h4>
-                    </div>
-                    <div
-                      id="collapseValentina"
-                      class="collapse"
-                      aria-labelledby="headingValentina"
-                      data-bs-parent="#accordionComunidades"
-                    >
-                      <div class="card-body">
-                        <p>
-                          El día a día y los proyectos de Valentina Isabel,
-                          conectando con su audiencia de manera auténtica y
-                          cercana.
-                        </p>
-                        <div class="row g-2 mb-2">
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/valentina-post1.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Valentina"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/valentina-post2.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Valentina"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="https://scontent-mad1-1.xx.fbcdn.net/v/t1.6435-9/178482437_326720942145940_6477783282697025392_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=wEQBzzjCk6gQ7kNvwESqprU&_nc_oc=Adlf7xFb_kjUy6vt7QLGI6WQz_hdHKHPh04bbhDc55HMNJ5FsGzGiXW_ptI9U-Or6LVHj5fFn79_xl36TPw8m35K&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=ELOlaCTAhZyDDmuW3WqBYg&oh=00_AfKXZO-97pLVLnkTyJVWI7SSbNIZZO30IhbzdthCmR3yTA&oe=68512987"
-                              class="img-fluid rounded"
-                              alt="Post Valentina"
-                            />
-                          </div>
+                    <!-- Soymaykelito -->
+                    <div class="col-md-4 mb-4">
+                      <div class="card text-center shadow border-0 h-100">
+                        <img src="https://scontent-mad1-1.xx.fbcdn.net/v/t39.30808-6/379903773_847009086997005_4711478817162442281_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=x42NDSs4cYEQ7kNvwE1OCpy&_nc_oc=Adloek_vFt8Mlkadi1WvdH1rPsMpzWj8e3KbLaLbvn5UqB9E0QV3SIsgL0n1giSN9fwzST4RsnfzFMWZO2swoP7H&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=O3BxMOzD7dVu0V6aWri5aA&oh=00_AfJtKvLD1ao8MnWA2UXhdf7ghlU3nwJJtQ1O5wDKhmSbvw&oe=682F9243" class="card-img-top rounded-circle mx-auto mt-4" style="width:120px; height:120px; object-fit:cover;" alt="Soymaykelito">
+                        <div class="card-body">
+                          <h5 class="card-title mb-1 font-weight-bold">Soymaykelito</h5>
+                          <p class="card-text text-muted mb-2">Contenido fresco y divertido</p>
+                          <a href="https://www.facebook.com/Soymaykelito" target="_blank" class="btn btn-primary btn-sm">
+                            Ver en Facebook <i class="fab fa-facebook-f ms-1"></i>
+                          </a>
                         </div>
-                        <a
-                          href="https://www.facebook.com/ValentinaIsabeloficial"
-                          target="_blank"
-                          class="btn btn-outline btn-primary btn-sm"
-                          >Visitar en Facebook
-                          <i class="fab fa-facebook-f ms-1"></i
-                        ></a>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="card card-default appear-animation"
-                    data-appear-animation="fadeInRightShorter"
-                    data-appear-animation-delay="600"
-                  >
-                    <div class="card-header" id="headingMaykelito">
-                      <h4 class="card-title m-0">
-                        <a
-                          class="accordion-toggle text-color-dark font-weight-bold collapsed"
-                          data-bs-toggle="collapse"
-                          href="#collapseMaykelito"
-                          aria-expanded="false"
-                          aria-controls="collapseMaykelito"
-                        >
-                          <img
-                            src="https://scontent-mad1-1.xx.fbcdn.net/v/t39.30808-6/379903773_847009086997005_4711478817162442281_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=x42NDSs4cYEQ7kNvwE1OCpy&_nc_oc=Adloek_vFt8Mlkadi1WvdH1rPsMpzWj8e3KbLaLbvn5UqB9E0QV3SIsgL0n1giSN9fwzST4RsnfzFMWZO2swoP7H&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=O3BxMOzD7dVu0V6aWri5aA&oh=00_AfJtKvLD1ao8MnWA2UXhdf7ghlU3nwJJtQ1O5wDKhmSbvw&oe=682F9243"
-                            alt="Soymaykelito"
-                            class="me-2"
-                            style="max-height: 24px"
-                          />
-                          Soymaykelito
-                        </a>
-                      </h4>
-                    </div>
-                    <div
-                      id="collapseMaykelito"
-                      class="collapse"
-                      aria-labelledby="headingMaykelito"
-                      data-bs-parent="#accordionComunidades"
-                    >
-                      <div class="card-body">
-                        <p>
-                          Contenido fresco, divertido y lleno de energía que
-                          refleja la personalidad única de Soymaykelito.
-                        </p>
-                        <div class="row g-2 mb-2">
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/maykelito-post1.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Maykelito"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/maykelito-post2.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Maykelito"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/maykelito-post3.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Maykelito"
-                            />
-                          </div>
+                    <!-- iSofiacristel -->
+                    <div class="col-md-4 mb-4">
+                      <div class="card text-center shadow border-0 h-100">
+                        <img src="https://scontent-mad1-1.xx.fbcdn.net/v/t39.30808-6/488610542_1206809047679870_5742933322531509138_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=mX9_lND0lsgQ7kNvwGh6tfP&_nc_oc=AdnyMb0xUqniqx8HUyJQQYXC3_GUH4BbwB_ByOtAur-0gVWnNI-acwRL8vPL_e8RERM19KC_68ZupLB_jb1Enk21&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=XPqtC5voRBuRWFKMP6AMbA&oh=00_AfLKjKH76Wu4ZXWzK9pifTdPdMzdMEJz9t0DcKWY7wDUJg&oe=682F858C" class="card-img-top rounded-circle mx-auto mt-4" style="width:120px; height:120px; object-fit:cover;" alt="iSofiacristel">
+                        <div class="card-body">
+                          <h5 class="card-title mb-1 font-weight-bold">iSofiacristel</h5>
+                          <p class="card-text text-muted mb-2">Creatividad y estilo para nuevas generaciones</p>
+                          <a href="https://www.facebook.com/iSofiacristel" target="_blank" class="btn btn-primary btn-sm">
+                            Ver en Facebook <i class="fab fa-facebook-f ms-1"></i>
+                          </a>
                         </div>
-                        <a
-                          href="https://www.facebook.com/Soymaykelito"
-                          target="_blank"
-                          class="btn btn-outline btn-primary btn-sm"
-                          >Visitar en Facebook
-                          <i class="fab fa-facebook-f ms-1"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="card card-default appear-animation"
-                    data-appear-animation="fadeInRightShorter"
-                    data-appear-animation-delay="700"
-                  >
-                    <div class="card-header" id="headingSofia">
-                      <h4 class="card-title m-0">
-                        <a
-                          class="accordion-toggle text-color-dark font-weight-bold collapsed"
-                          data-bs-toggle="collapse"
-                          href="#collapseSofia"
-                          aria-expanded="false"
-                          aria-controls="collapseSofia"
-                        >
-                          <img
-                            src="https://scontent-mad1-1.xx.fbcdn.net/v/t39.30808-6/488610542_1206809047679870_5742933322531509138_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=mX9_lND0lsgQ7kNvwGh6tfP&_nc_oc=AdnyMb0xUqniqx8HUyJQQYXC3_GUH4BbwB_ByOtAur-0gVWnNI-acwRL8vPL_e8RERM19KC_68ZupLB_jb1Enk21&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=XPqtC5voRBuRWFKMP6AMbA&oh=00_AfLKjKH76Wu4ZXWzK9pifTdPdMzdMEJz9t0DcKWY7wDUJg&oe=682F858C"
-                            alt="iSofiacristel"
-                            class="me-2"
-                            style="max-height: 24px"
-                          />
-                          iSofiacristel
-                        </a>
-                      </h4>
-                    </div>
-                    <div
-                      id="collapseSofia"
-                      class="collapse"
-                      aria-labelledby="headingSofia"
-                      data-bs-parent="#accordionComunidades"
-                    >
-                      <div class="card-body">
-                        <p>
-                          Descubre el mundo de iSofiacristel: creatividad,
-                          estilo y contenido que inspira a las nuevas
-                          generaciones.
-                        </p>
-                        <div class="row g-2 mb-2">
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/sofia-post1.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Sofia"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/sofia-post2.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Sofia"
-                            />
-                          </div>
-                          <div class="col-4">
-                            <img
-                              src="img/demos/business-consulting-2/filmz/comunidades/sofia-post3.jpg"
-                              class="img-fluid rounded"
-                              alt="Post Sofia"
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="https://www.facebook.com/iSofiacristel"
-                          target="_blank"
-                          class="btn btn-outline btn-primary btn-sm"
-                          >Visitar en Facebook
-                          <i class="fab fa-facebook-f ms-1"></i
-                        ></a>
                       </div>
                     </div>
                   </div>
                 </div>
+                <!-- FIN NUEVO DISEÑO DE TARJETAS DE FACEBOOK -->
                 <div
                   class="mt-4 text-center text-lg-start appear-animation"
                   data-appear-animation="fadeInRightShorter"
                   data-appear-animation-delay="800"
                 >
-                  <a
-                    href="#unete"
-                    class="btn btn-primary custom-btn text-center text-uppercase text-decoration-none border-0 py-0 px-5 font-weight-semibold"
-                    >Síguenos y No Te Pierdas Nada</a
-                  >
+               
                 </div>
               </div>
             </div>
@@ -1104,11 +795,7 @@
                   data-appear-animation="fadeInUpShorter"
                   data-appear-animation-delay="100"
                 >
-                  <div class="title-with-lines">
-                    <span class="line-pre-title bg-color-secondary"></span>
-                    <span>La Cocina Creativa</span>
-                    <span class="line-end-title bg-color-secondary"></span>
-                  </div>
+                  
                 </p>
                 <h2
                   class="text-color-secondary font-weight-bold text-capitalize mb-2 custom-letter-spacing-2 custom-text-1 appear-animation"
@@ -1242,11 +929,7 @@
                   data-appear-animation="fadeInRightShorter"
                   data-appear-animation-delay="100"
                 >
-                  <div class="title-with-lines">
-                    <span class="line-pre-title bg-color-secondary"></span>
-                    <span>Sé Parte de la Historia</span>
-                    <span class="line-end-title bg-color-secondary"></span>
-                  </div>
+              
                 </p>
                 <h2
                   class="text-color-light font-weight-bold text-capitalize mb-2 letter-spacing-08 font-size-32 appear-animation"
@@ -1256,7 +939,7 @@
                   ¿Tienes una Idea? ¿Quieres Colaborar? ¡Conectemos!
                 </h2>
                 <p
-                  class="font-weight-regular text-color-light-scale-2 mb-0 appear-animation"
+                  class="font-weight-regular text-color-light mb-0 appear-animation"
                   data-appear-animation="fadeInRightShorter"
                   data-appear-animation-delay="400"
                 >
@@ -1276,20 +959,20 @@
                   <h4 class="text-color-light font-weight-semibold text-4">
                     Para la Audiencia:
                   </h4>
-                  <p class="text-color-light-scale-2 mb-1">
+                  <p class="text-color-light mb-1">
                     Síguenos, comparte, comenta. ¡Tu voz nos inspira!
                   </p>
                   <a
-                    href="https://youtube.com/filmznetwork"
+                    href="https://www.youtube.com/@escritosreflexivos"
                     target="_blank"
-                    class="btn btn-light btn-outline btn-sm me-2"
+                    class="btn btn-light btn-outline btn-sm me-2 text-color-light"
                     ><i class="fab fa-youtube me-1"></i> YouTube</a
                   >
                   <a
-                    href="https://instagram.com/filmznetwork"
+                    href="https://www.facebook.com/iFilmznetwork"
                     target="_blank"
-                    class="btn btn-light btn-outline btn-sm"
-                    ><i class="fab fa-instagram me-1"></i> Instagram</a
+                    class="btn btn-light btn-outline btn-sm text-color-light"
+                    ><i class="fab fa-facebook me-1"></i> Facebook</a
                   >
                 </div>
                 <div
@@ -1315,11 +998,7 @@
                 data-appear-animation="fadeInUpShorter"
                 data-appear-animation-delay="100"
               >
-                <div class="title-with-lines">
-                  <span class="line-pre-title bg-color-secondary"></span>
-                  <span>Contacto Directo</span>
-                  <span class="line-end-title bg-color-secondary"></span>
-                </div>
+           
               </p>
               <h2
                 class="text-color-secondary font-weight-bold text-capitalize mb-4 custom-letter-spacing-2 custom-text-1 appear-animation"
@@ -1444,9 +1123,7 @@
                 alt="Filmz Network Logo Footer"
                 class="mb-3"
               />
-              <p class="d-block m-0 text-color-default text-2">
-                Filmz Network: Historias que Mueven el Mundo Digital.
-              </p>
+             
             </div>
             <div class="col-12 col-md-8 col-lg-9 footer-column">
               <div
@@ -1455,29 +1132,14 @@
                 <div
                   class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-end align-items-center w-100 custom-container-info-socials"
                 >
-                  <ul class="nav nav-pills mb-3 mb-lg-0">
-                    <li class="nav-item d-inline-flex">
-                      <span
-                        class="footer-nav-email px-0 font-weight-normal d-flex align-items-center"
-                      >
-                        <span
-                          ><i
-                            class="far fa-envelope highlight-primary-invert me-2"
-                          ></i
-                        ></span>
-                        <a
-                          class="text-color-secondary text-color-hover-primary text-decoration-none text-3"
-                          href="mailto:colabora@filmznetwork.com"
-                          >colabora@filmznetwork.com</a
-                        >
-                      </span>
-                    </li>
-                  </ul>
+                
                   <ul class="social-icons custom-social-icons ms-lg-4">
+
+
                     <li class="social-icons-youtube">
                       <a
                         class="custom-bg-color-light-grey"
-                        href="https://youtube.com/filmznetwork"
+                        href="https://www.youtube.com/@escritosreflexivos"
                         target="_blank"
                         title="YouTube"
                       >
@@ -1486,22 +1148,11 @@
                         ></i>
                       </a>
                     </li>
-                    <li class="social-icons-instagram">
-                      <a
-                        class="custom-bg-color-light-grey"
-                        href="https://instagram.com/filmznetwork"
-                        target="_blank"
-                        title="Instagram"
-                      >
-                        <i
-                          class="fab fa-instagram text-4 font-weight-semibold text-color-secondary"
-                        ></i>
-                      </a>
-                    </li>
+                 
                     <li class="social-icons-facebook">
                       <a
                         class="custom-bg-color-light-grey"
-                        href="https://facebook.com/filmznetworkpage"
+                        href="https://www.facebook.com/iFilmznetwork"
                         target="_blank"
                         title="Facebook"
                       >
@@ -1510,18 +1161,7 @@
                         ></i>
                       </a>
                     </li>
-                    <li class="social-icons-linkedin">
-                      <a
-                        class="custom-bg-color-light-grey"
-                        href="https://linkedin.com/company/filmznetwork"
-                        target="_blank"
-                        title="LinkedIn"
-                      >
-                        <i
-                          class="fab fa-linkedin-in text-4 font-weight-semibold text-color-secondary"
-                        ></i>
-                      </a>
-                    </li>
+               
                   </ul>
                 </div>
                 <nav class="nav-footer w-100 d-none d-lg-block mt-3">
@@ -1532,14 +1172,24 @@
                     <li class="dropdown-secondary">
                       <a
                         class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
-                        href="index.html"
+                        href="#inicio"
+                        onclick="setActiveLink(this)"
                         >Inicio</a
                       >
                     </li>
                     <li class="dropdown-secondary">
                       <a
                         class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
+                        href="#manifiesto"
+                        onclick="setActiveLink(this)"
+                        >Manifiesto</a
+                      >
+                    </li>
+                    <li class="dropdown-secondary">
+                      <a
+                        class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
                         href="#universos"
+                        onclick="setActiveLink(this)"
                         >Universos</a
                       >
                     </li>
@@ -1547,6 +1197,7 @@
                       <a
                         class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
                         href="#comunidades"
+                        onclick="setActiveLink(this)"
                         >Comunidades</a
                       >
                     </li>
@@ -1554,28 +1205,17 @@
                       <a
                         class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
                         href="#proceso"
+                        onclick="setActiveLink(this)"
                         >Proceso</a
                       >
                     </li>
-                    <li class="dropdown-secondary">
-                      <a
-                        class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
-                        href="#manifiesto"
-                        >Manifiesto</a
-                      >
-                    </li>
+                   
                     <li class="dropdown-secondary">
                       <a
                         class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
                         href="#unete"
+                        onclick="setActiveLink(this)"
                         >Únete</a
-                      >
-                    </li>
-                    <li class="dropdown-secondary">
-                      <a
-                        class="nav-link text-color-secondary font-weight-semibold letter-spacing-05 text-color-hover-primary"
-                        href="politica-privacidad.html"
-                        >Privacidad</a
                       >
                     </li>
                   </ul>
@@ -1606,5 +1246,27 @@
     <script src="js/custom.js"></script>
 
     <script src="js/theme.init.js"></script>
+
+    <script>
+    function setActiveMainNav(element) {
+        // Remover la clase active de todos los enlaces del menú principal
+        document.querySelectorAll('#mainNav .nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Agregar la clase active al enlace clickeado
+        element.classList.add('active');
+    }
+
+    function setActiveLink(element) {
+        // Remover la clase active de todos los enlaces del footer
+        document.querySelectorAll('#mainNavFooter .nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Agregar la clase active al enlace clickeado
+        element.classList.add('active');
+    }
+    </script>
   </body>
 </html>
